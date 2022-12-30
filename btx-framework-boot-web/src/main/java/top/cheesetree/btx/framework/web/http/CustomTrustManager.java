@@ -7,8 +7,6 @@ import java.security.cert.X509Certificate;
 
 /**
  * @author van
- * @date 2022/3/7 10:35
- * @description TODO
  */
 public class CustomTrustManager implements X509TrustManager, TrustManager {
     @Override

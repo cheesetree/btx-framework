@@ -3,9 +3,7 @@ package top.cheesetree.btx.framework.cache;
 import org.springframework.cache.CacheManager;
 
 /**
- * @Author: van
- * @Date: 2020/9/27 13:46
- * @Description: TODO
+ * @author van
  */
 public interface BtxCacheManager extends CacheManager {
 }

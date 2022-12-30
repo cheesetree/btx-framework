@@ -14,9 +14,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @Author: van
- * @Date: 2020/9/27 13:37
- * @Description: TODO
+ * @author van
  */
 @Slf4j
 public class BtxRedisCacheManager extends RedisCacheManager implements BtxCacheManager {

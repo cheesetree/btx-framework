@@ -6,7 +6,6 @@
 
 plugins {
     `java-library`
-    id("org.springframework.boot")
 }
 
 dependencies {

@@ -10,9 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 
 /**
- * @Author: van
- * @Date: 2021/8/25 17:28
- * @Description: TODO
+ * @author van
  */
 @Configuration
 @MapperScan("${mybatis-plus.mapper-scan:top.cheesetree.**.mapper}")

@@ -13,9 +13,7 @@ import top.cheesetree.btx.framework.core.json.CommJSON;
 import java.util.UUID;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 10:05
- * @Description: TODO
+ * @author van
  */
 @Order()
 @ControllerAdvice

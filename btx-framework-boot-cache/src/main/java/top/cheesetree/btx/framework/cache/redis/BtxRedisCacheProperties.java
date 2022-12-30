@@ -9,9 +9,7 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
- * @Author: van
- * @Date: 2020/9/27 13:51
- * @Description: TODO
+ * @author van
  */
 @ConfigurationProperties(prefix = "btx.cache.redis")
 @Setter

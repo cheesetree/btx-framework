@@ -34,7 +34,6 @@ hs_err_pid*
 **/.umi/
 **/.gradle/
 **/build/
-deployer.properties
 
 #**/resources/static/
 !.gitkeep

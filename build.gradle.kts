@@ -18,7 +18,7 @@ val javaProjects = subprojects - frameworkBomProject
 
 configure(allprojects) {
     group = "top.cheesetree.btx.framework"
-    version = project.version
+    version = BtxRepositories.version
 
     repositories {
         mavenLocal()
@@ -105,9 +105,9 @@ configure(moduleProjects) {
     }
 }
 
-//configure(publishProjects) {
-//    apply {
-//        plugin("gourd-publish")
-//        //plugin("gourd-proguard")
-//    }
-//}
+configure(publishProjects) {
+    apply {
+        plugin("btx-publish")
+    }
+
+}

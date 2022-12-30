@@ -3,9 +3,8 @@ package top.cheesetree.btx.framework.core.exception;
 import top.cheesetree.btx.framework.core.constants.BtxMessage;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 11:01
- * @Description: 异常编码有4段组成 系统编码-业务编码-预留码(0000)-具体异常码(4位数字)
+ * @author van
+ * 异常编码有4段组成 系统编码-业务编码-预留码(0000)-具体异常码(4位数字)
  */
 public class ExceptionCodeUtil {
     public static String generateExceptionCode(String sysid, String busid, String defcode, String errcode) {

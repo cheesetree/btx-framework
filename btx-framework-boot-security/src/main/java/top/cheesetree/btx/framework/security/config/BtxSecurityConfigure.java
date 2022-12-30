@@ -4,9 +4,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Configuration;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 13:59
- * @Description: TODO
+ * @author: van
  */
 @EnableConfigurationProperties({BtxSecurityProperties.class})
 @Configuration

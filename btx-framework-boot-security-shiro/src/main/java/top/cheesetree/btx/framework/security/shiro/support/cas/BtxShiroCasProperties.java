@@ -7,8 +7,6 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
  * @author van
- * @date 2022/2/21 10:43
- * @description TODO
  */
 @ConfigurationProperties(prefix = "btx.security.shiro.cas", ignoreUnknownFields = false)
 @Getter

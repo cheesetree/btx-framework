@@ -7,9 +7,7 @@ import lombok.Setter;
 import top.cheesetree.btx.framework.core.model.ValueObject;
 
 /**
- * @Author: van
- * @Date: 2021/8/25 17:28
- * @Description: TODO
+ * @author van
  */
 @Getter
 @Setter

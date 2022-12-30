@@ -6,8 +6,6 @@ import org.springframework.data.redis.serializer.RedisSerializer;
 
 /**
  * @author van
- * @date 2022/2/18 14:49
- * @description TODO
  */
 @Getter
 @Setter

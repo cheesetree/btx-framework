@@ -12,9 +12,7 @@ import top.cheesetree.btx.framework.database.hikari.config.BtxDataSourceConfigur
 import java.util.Base64;
 
 /**
- * @Author: van
- * @Date: 2020/10/27 14:36
- * @Description: TODO
+ * @author van
  */
 @Component
 public class BtxHikariBeanPostProcessor implements BeanPostProcessor {

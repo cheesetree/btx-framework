@@ -8,17 +8,9 @@ import javax.servlet.http.HttpServletRequest;
 
 /**
  * @author van
- * @date 2022/2/11 13:54
- * @description TODO
  */
 public class RequestUtil {
 
-    /**
-     * 是否是ajax异步请求
-     *
-     * @param request
-     * @return
-     */
     public static boolean isAjaxRequest(HttpServletRequest request) {
         String accept = request.getHeader(HttpHeaders.ACCEPT);
         if (accept != null && accept.indexOf(MediaType.APPLICATION_JSON_VALUE) != -1) {

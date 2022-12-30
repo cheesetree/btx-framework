@@ -17,9 +17,7 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 
 /**
- * @Author: van
- * @Date: 2020/10/26 10:23
- * @Description: TODO
+ * @author van
  */
 @EnableConfigurationProperties({BtxDataSourceConfigure.class})
 @Configuration

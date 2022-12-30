@@ -9,9 +9,7 @@ import java.net.HttpURLConnection;
 import java.security.cert.X509Certificate;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 10:05
- * @Description: TODO
+ * @author van
  */
 public class HttpsClientRequestFactory extends SimpleClientHttpRequestFactory {
     Logger logger = LoggerFactory.getLogger(getClass());

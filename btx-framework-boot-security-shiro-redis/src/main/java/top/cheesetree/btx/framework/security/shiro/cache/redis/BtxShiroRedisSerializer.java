@@ -9,8 +9,6 @@ import org.springframework.data.redis.serializer.SerializationException;
 
 /**
  * @author van
- * @date 2022/2/18 13:18
- * @description TODO
  */
 public class BtxShiroRedisSerializer implements RedisSerializer<Object> {
 

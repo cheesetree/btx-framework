@@ -13,9 +13,7 @@ import top.cheesetree.btx.framework.security.shiro.config.BtxShiroCachePropertie
 import top.cheesetree.btx.framework.security.shiro.config.BtxShiroProperties;
 
 /**
- * @Author: van
- * @Date: 2022/1/12 13:25
- * @Description: TODO
+ * @author van
  */
 @Configuration
 @Slf4j

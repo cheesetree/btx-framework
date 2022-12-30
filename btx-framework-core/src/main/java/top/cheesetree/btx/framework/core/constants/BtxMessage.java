@@ -5,9 +5,7 @@ import lombok.Data;
 import java.io.Serializable;
 
 /**
- * @Author: van
- * @Date: 2021/8/25 09:43
- * @Description: TODO
+ * @author van
  */
 @Data
 public class BtxMessage implements Serializable {

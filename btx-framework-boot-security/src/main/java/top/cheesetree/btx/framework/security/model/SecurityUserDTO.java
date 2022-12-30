@@ -8,9 +8,7 @@ import top.cheesetree.btx.framework.core.model.ValueObject;
 import java.util.List;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 10:52
- * @Description: TODO
+ * @author: van
  */
 @Getter
 @Setter

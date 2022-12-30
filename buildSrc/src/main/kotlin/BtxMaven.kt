@@ -4,19 +4,10 @@ import java.net.URI
  * 仓库相关信息
  */
 object BtxRepositories {
+    val ossrhMavenReleasesUrl = URI("https://s01.oss.sonatype.org/service/local/staging/deploy/maven2/")
 
-    /**
-     * 发布信息
-     */
-    object Deployment {
-        /**
-         * nexus发布用户名
-         */
-        const val username = "deployment"
+    val ossrhMavenSnapshotsUrl = URI("https://s01.oss.sonatype.org/content/repositories/snapshots")
 
-        /**
-         * nexus发布密码
-         */
-        const val password = "sDeployment2021"
-    }
+    val version= "1.3.0-SNAPSHOT"
+
 }

@@ -24,6 +24,7 @@ dependencies {
     implementation("com.guardsquare:proguard-gradle:7.1.1")
     implementation(kotlin("stdlib-jdk8"))
 }
+
 val compileKotlin: KotlinCompile by tasks
 compileKotlin.kotlinOptions {
     jvmTarget = "1.8"

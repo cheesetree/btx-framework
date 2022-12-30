@@ -1,3 +1,4 @@
 apply {
-    plugin("btx-boms")
+
+plugin("btx-boms")
 }

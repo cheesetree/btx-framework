@@ -12,8 +12,6 @@ import java.lang.reflect.Type;
 
 /**
  * @author van
- * @date 2022/2/15 17:25
- * @description TODO
  */
 public class RedisShiroCacheManager implements CacheManager {
     private RedisTemplateFactoryImpl redisTemplateFactory;

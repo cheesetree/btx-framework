@@ -6,8 +6,6 @@ import org.apache.shiro.web.mgt.DefaultWebSubjectFactory;
 
 /**
  * @author van
- * @date 2022/2/18 09:16
- * @description TODO
  */
 public class StatelessDefaultSubjectFactory extends DefaultWebSubjectFactory {
     @Override

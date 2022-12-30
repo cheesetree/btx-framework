@@ -6,7 +6,6 @@
 
 plugins {
     `java-library`
-    id("org.springframework.boot")
 }
 
 dependencies {
@@ -24,7 +23,4 @@ tasks {
         archiveClassifier.set("")
     }
 
-    bootJar {
-        enabled = false
-    }
 }

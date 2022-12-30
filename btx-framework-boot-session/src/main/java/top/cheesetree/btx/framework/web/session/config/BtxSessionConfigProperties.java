@@ -9,9 +9,7 @@ import java.time.Duration;
 import java.time.temporal.ChronoUnit;
 
 /**
- * @Author: van
- * @Date: 2021/4/2 15:05
- * @Description: TODO
+ * @author van
  */
 @Getter
 public class BtxSessionConfigProperties {

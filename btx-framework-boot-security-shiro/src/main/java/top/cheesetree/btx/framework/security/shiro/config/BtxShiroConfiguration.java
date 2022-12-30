@@ -43,9 +43,7 @@ import javax.servlet.Filter;
 import java.util.*;
 
 /**
- * @Author: van
- * @Date: 2022/1/12 13:25
- * @Description: TODO
+ * @author: van
  */
 @Configuration
 @EnableConfigurationProperties({BtxShiroProperties.class, BtxShiroCacheProperties.class, BtxShiroCasProperties.class,
@@ -69,6 +67,8 @@ public class BtxShiroConfiguration {
     /**
      * 开启shiro aop注解支持.
      * 使用代理方式;所以需要开启代码支持;
+     *
+     * @return aa
      */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
@@ -182,6 +182,7 @@ public class BtxShiroConfiguration {
 
     /**
      * 注入 securityManager
+     * @return securityManager
      */
     @Bean
     public SessionsSecurityManager securityManager() {

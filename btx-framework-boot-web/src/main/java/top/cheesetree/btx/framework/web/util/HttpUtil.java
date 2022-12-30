@@ -14,9 +14,7 @@ import java.util.Iterator;
 import java.util.Map;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 10:05
- * @Description: TODO
+ * @author van
  */
 @Slf4j
 public class HttpUtil {
@@ -72,9 +70,6 @@ public class HttpUtil {
         return httpPost(url, param, headers, to, isHttps);
     }
 
-    /**
-     * get方法
-     */
     public static String httpGet(String url, HashMap<String, String> headers, int to, boolean isHttps) {
         String ret = "";
         RestTemplate restTemplate = geRestTemplate(isHttps, to);

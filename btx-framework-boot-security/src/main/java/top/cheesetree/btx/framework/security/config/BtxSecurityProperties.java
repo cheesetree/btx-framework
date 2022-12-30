@@ -5,9 +5,7 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 13:58
- * @Description: TODO
+ * @author: van
  */
 @ConfigurationProperties(prefix = "btx.security")
 @Getter

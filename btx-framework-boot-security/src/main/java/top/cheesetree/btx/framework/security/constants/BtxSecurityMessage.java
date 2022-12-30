@@ -3,9 +3,7 @@ package top.cheesetree.btx.framework.security.constants;
 import top.cheesetree.btx.framework.core.constants.BtxMessage;
 
 /**
- * @Author: van
- * @Date: 2022/1/13 10:28
- * @Description: TODO
+ * @author: van
  */
 public class BtxSecurityMessage extends BtxMessage {
     public BtxSecurityMessage(Integer code, String message) {

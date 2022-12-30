@@ -6,9 +6,7 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Author: van
- * @Date: 2020/10/23 10:55
- * @Description: TODO
+ * @author van
  */
 @ConfigurationProperties(prefix = "btx.database")
 @Getter

@@ -5,8 +5,6 @@ import java.nio.charset.StandardCharsets;
 
 /**
  * @author van
- * @date 2021/8/6 16:02
- * @description TODO
  */
 public interface BtxConsts {
     String EMPTY = "";

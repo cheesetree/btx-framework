@@ -7,8 +7,6 @@ import top.cheesetree.btx.framework.security.model.SecurityRoleDTO;
 
 /**
  * @author van
- * @date 2022/4/14 08:56
- * @description TODO
  */
 @Getter
 @Setter

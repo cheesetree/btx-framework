@@ -4,9 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @Author: van
- * @Date: 2022/1/6 16:01
- * @Description: TODO
+ * @author van
  */
 @ConfigurationProperties("btx.web")
 @Data

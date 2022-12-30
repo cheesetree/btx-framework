@@ -20,9 +20,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @Author: van
- * @Date: 2020/9/27 14:07
- * @Description: TODO
+ * @author van
  */
 
 @ConditionalOnProperty(name = "spring.cache.type", havingValue = "redis")

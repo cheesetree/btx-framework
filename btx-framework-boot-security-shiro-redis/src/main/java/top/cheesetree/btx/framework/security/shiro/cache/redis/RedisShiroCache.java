@@ -14,8 +14,6 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author van
- * @date 2022/2/15 17:22
- * @description TODO
  */
 public class RedisShiroCache<K, V> implements Cache<K, V> {
     private RedisTemplate<String, V> redisTemplate;

@@ -4,9 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 /**
- * @Author: van
- * @Date: 2021/8/10 15:38
- * @Description: TODO
+ * @author van
  */
 @Getter
 @Setter

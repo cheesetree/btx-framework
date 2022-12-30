@@ -21,9 +21,7 @@ import top.cheesetree.btx.framework.security.shiro.subject.StatelessToken;
 import top.cheesetree.btx.framework.security.shiro.support.cas.CasToken;
 
 /**
- * @Author: van
- * @Date: 2022/1/13 09:29
- * @Description: TODO
+ * @author: van
  */
 @Slf4j
 @Component

@@ -5,9 +5,7 @@ import org.springframework.lang.Nullable;
 import top.cheesetree.btx.framework.core.constants.BtxConsts;
 
 /**
- * @Author: van
- * @Date: 2021/9/22 10:37
- * @Description: TODO
+ * @author van
  */
 public class BtxKeyStringRedisSerializer implements RedisSerializer<String> {
     private String keyprefix;

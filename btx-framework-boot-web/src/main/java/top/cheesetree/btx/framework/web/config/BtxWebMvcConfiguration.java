@@ -29,9 +29,7 @@ import java.util.List;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @Author: van
- * @Date: 2021/8/27 10:00
- * @Description: TODO
+ * @author van
  */
 @Configuration
 @EnableConfigurationProperties({BtxWebProperties.class, BtxRestProperties.class})
