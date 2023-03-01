@@ -8,6 +8,8 @@ import top.cheesetree.btx.framework.security.shiro.model.AuthTokenInfo;
 
 /**
  * @author van
+ * @date 2022/4/6 15:24
+ * @description TODO
  */
 public class BtxSpringSecurityController implements SecurityController {
     @Autowired

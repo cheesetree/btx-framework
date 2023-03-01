@@ -16,6 +16,7 @@ import top.cheesetree.btx.framework.security.IBtxSecurityUserService;
 import top.cheesetree.btx.framework.security.constants.BtxSecurityMessage;
 import top.cheesetree.btx.framework.security.model.SecurityFuncDTO;
 import top.cheesetree.btx.framework.security.model.SecurityRoleDTO;
+import top.cheesetree.btx.framework.security.shiro.config.BtxShiroCacheProperties;
 import top.cheesetree.btx.framework.security.shiro.config.BtxShiroProperties;
 import top.cheesetree.btx.framework.security.shiro.matcher.BtxNoAuthCredentialsMatcher;
 import top.cheesetree.btx.framework.security.shiro.model.*;
@@ -26,7 +27,9 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/12 15:15
+ * @Description: TODO
  */
 public class BtxSecurityAuthorizingRealm extends AuthorizingRealm {
     @Autowired
@@ -41,6 +44,9 @@ public class BtxSecurityAuthorizingRealm extends AuthorizingRealm {
     @Autowired
     @Lazy
     private BtxShiroProperties btxShiroProperties;
+
+    @Autowired
+    BtxShiroCacheProperties btxShiroCacheProperties;
 
     public BtxSecurityAuthorizingRealm(BtxNoAuthCredentialsMatcher btxNoAuthCredentialsMatcher) {
         super(btxNoAuthCredentialsMatcher);
@@ -120,4 +126,9 @@ public class BtxSecurityAuthorizingRealm extends AuthorizingRealm {
     protected Object getAuthenticationCacheKey(AuthenticationToken token) {
         return token != null ? ((StatelessToken) token).getToken() : null;
     }
+
+    public void clearUserAuthorization(BtxShiroSecurityAuthUserDTO u) {
+        this.doClearCache(new SimplePrincipalCollection(u, "user"));
+    }
+
 }

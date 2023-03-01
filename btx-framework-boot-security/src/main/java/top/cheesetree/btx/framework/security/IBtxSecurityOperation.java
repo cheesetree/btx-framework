@@ -20,4 +20,5 @@ public interface IBtxSecurityOperation {
 
     <T extends ValueObject> T getAuthInfo();
 
+    <T extends SecurityUserDTO> CommJSON runas(T user);
 }

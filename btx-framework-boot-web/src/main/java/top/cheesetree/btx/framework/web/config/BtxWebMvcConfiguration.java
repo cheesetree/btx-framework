@@ -123,20 +123,6 @@ public class BtxWebMvcConfiguration implements WebMvcConfigurer {
 
     @Bean("btxRestTemplate")
     public RestTemplate getRestTemplate() {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-        List<MediaType> supportedMediaTypes = new ArrayList<>();
-        supportedMediaTypes.add(MediaType.APPLICATION_JSON);
-        supportedMediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
-        supportedMediaTypes.add(MediaType.APPLICATION_OCTET_STREAM);
-        supportedMediaTypes.add(MediaType.TEXT_HTML);
-        supportedMediaTypes.add(MediaType.TEXT_PLAIN);
-        fastConverter.setSupportedMediaTypes(supportedMediaTypes);
-
-        //创建配置类
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.DisableCircularReferenceDetect,
-                SerializerFeature.WriteNullBooleanAsFalse);
-        fastConverter.setFastJsonConfig(fastJsonConfig);
         OkHttpClient okclient =
                 new OkHttpClient().newBuilder().connectionPool(new ConnectionPool(btxRestProperties.getMaxPoolIdle(),
                         btxRestProperties.getMaxPoolLiveTime(), TimeUnit.MINUTES)).retryOnConnectionFailure(false).connectTimeout(btxRestProperties.getConnectTimeOut(), TimeUnit.SECONDS).readTimeout(btxRestProperties.getReadTimeOut(), TimeUnit.SECONDS).writeTimeout(btxRestProperties.getWriteTimeOut(), TimeUnit.SECONDS).build();
@@ -145,20 +131,6 @@ public class BtxWebMvcConfiguration implements WebMvcConfigurer {
 
     @Bean("btxRestSslTemplate")
     public RestTemplate getRestSslTemplate() {
-        FastJsonHttpMessageConverter fastConverter = new FastJsonHttpMessageConverter();
-        List<MediaType> supportedMediaTypes = new ArrayList<>();
-        supportedMediaTypes.add(MediaType.APPLICATION_JSON);
-        supportedMediaTypes.add(MediaType.APPLICATION_FORM_URLENCODED);
-        supportedMediaTypes.add(MediaType.APPLICATION_OCTET_STREAM);
-        supportedMediaTypes.add(MediaType.TEXT_HTML);
-        supportedMediaTypes.add(MediaType.TEXT_PLAIN);
-        fastConverter.setSupportedMediaTypes(supportedMediaTypes);
-
-        //创建配置类
-        FastJsonConfig fastJsonConfig = new FastJsonConfig();
-        fastJsonConfig.setSerializerFeatures(SerializerFeature.DisableCircularReferenceDetect,
-                SerializerFeature.WriteNullBooleanAsFalse);
-        fastConverter.setFastJsonConfig(fastJsonConfig);
         OkHttpClient okclient =
                 new OkHttpClient().newBuilder().connectionSpecs(Arrays.asList(ConnectionSpec.MODERN_TLS,
                         ConnectionSpec.COMPATIBLE_TLS)).sslSocketFactory(new CustomSSLSocketFactory(),

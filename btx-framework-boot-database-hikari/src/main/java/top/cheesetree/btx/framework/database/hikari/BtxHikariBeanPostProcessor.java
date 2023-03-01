@@ -23,7 +23,7 @@ public class BtxHikariBeanPostProcessor implements BeanPostProcessor {
     @Override
     public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
         if (bean instanceof HikariDataSource) {
-            if (!StringUtils.isEmpty(btxDataSourceConfigure.getAppId()) && !StringUtils.isEmpty(btxDataSourceConfigure.getSecretKey())) {
+            if (StringUtils.hasLength(btxDataSourceConfigure.getAppId()) && StringUtils.hasLength(btxDataSourceConfigure.getSecretKey())) {
                 HikariDataSource hikariDataSource = (HikariDataSource) bean;
                 hikariDataSource.setPassword(getSecretResult(btxDataSourceConfigure.getAppId(),
                         btxDataSourceConfigure.getSecretKey(),

@@ -21,6 +21,8 @@ import java.io.OutputStream;
 
 /**
  * @author van
+ * @date 2022/2/17 15:09
+ * @description TODO
  */
 public class BtxSecurityShiroTokenFilter extends AuthenticatingFilter {
     private String tokenKey;
@@ -43,7 +45,7 @@ public class BtxSecurityShiroTokenFilter extends AuthenticatingFilter {
         StatelessToken token = null;
         String t = getToken((HttpServletRequest) servletRequest);
         if (ignoreToken || StringUtils.hasLength(t)) {
-            token = new StatelessToken(t, "");
+            token = new StatelessToken(t);
         }
         return token;
     }

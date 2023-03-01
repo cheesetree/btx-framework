@@ -7,7 +7,9 @@ import top.cheesetree.btx.framework.security.constants.BtxSecurityEnum;
 import top.cheesetree.btx.framework.security.shiro.constants.BtxSecurityShiroConst;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/13 09:03
+ * @Description: TODO
  */
 @ConfigurationProperties("btx.security.shiro")
 @Getter

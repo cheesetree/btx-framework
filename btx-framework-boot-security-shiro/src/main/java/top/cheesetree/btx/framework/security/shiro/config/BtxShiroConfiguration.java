@@ -5,8 +5,6 @@ import org.apache.shiro.authc.Authenticator;
 import org.apache.shiro.authc.pam.FirstSuccessfulStrategy;
 import org.apache.shiro.cache.CacheManager;
 import org.apache.shiro.cache.MemoryConstrainedCacheManager;
-import org.apache.shiro.mgt.DefaultSessionStorageEvaluator;
-import org.apache.shiro.mgt.DefaultSubjectDAO;
 import org.apache.shiro.mgt.SecurityManager;
 import org.apache.shiro.mgt.SessionsSecurityManager;
 import org.apache.shiro.realm.Realm;
@@ -43,7 +41,9 @@ import javax.servlet.Filter;
 import java.util.*;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/12 13:25
+ * @Description: TODO
  */
 @Configuration
 @EnableConfigurationProperties({BtxShiroProperties.class, BtxShiroCacheProperties.class, BtxShiroCasProperties.class,
@@ -67,8 +67,6 @@ public class BtxShiroConfiguration {
     /**
      * 开启shiro aop注解支持.
      * 使用代理方式;所以需要开启代码支持;
-     *
-     * @return aa
      */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
@@ -163,7 +161,7 @@ public class BtxShiroConfiguration {
 
     @Bean
     @ConditionalOnProperty(value = "btx.security.shiro.cache.cache-type", havingValue = "INNER", matchIfMissing = true)
-    public org.apache.shiro.cache.CacheManager shiroCacheManager() {
+    public CacheManager shiroCacheManager() {
         return new MemoryConstrainedCacheManager();
     }
 
@@ -182,7 +180,6 @@ public class BtxShiroConfiguration {
 
     /**
      * 注入 securityManager
-     * @return securityManager
      */
     @Bean
     public SessionsSecurityManager securityManager() {
@@ -202,15 +199,16 @@ public class BtxShiroConfiguration {
             securityManager.setCacheManager(cm);
         }
 
-        if (btxShiroProperties.getAuthType() != BtxSecurityEnum.AuthType.SESSION && btxShiroProperties.getAuthType() != BtxSecurityEnum.AuthType.CAS) {
-            // 禁用session
-            DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
-            DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
-            defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
-            subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
-            securityManager.setSubjectDAO(subjectDAO);
-            securityManager.setSubjectFactory(subjectFactory());
-        }
+//        if (btxShiroProperties.getAuthType() != BtxSecurityEnum.AuthType.SESSION && btxShiroProperties.getAuthType
+//        () != BtxSecurityEnum.AuthType.CAS) {
+//            // 禁用session
+//            DefaultSubjectDAO subjectDAO = new DefaultSubjectDAO();
+//            DefaultSessionStorageEvaluator defaultSessionStorageEvaluator = new DefaultSessionStorageEvaluator();
+//            defaultSessionStorageEvaluator.setSessionStorageEnabled(false);
+//            subjectDAO.setSessionStorageEvaluator(defaultSessionStorageEvaluator);
+//            securityManager.setSubjectDAO(subjectDAO);
+//            securityManager.setSubjectFactory(subjectFactory());
+//        }
 
         securityManager.setSessionManager(sessionManager());
 

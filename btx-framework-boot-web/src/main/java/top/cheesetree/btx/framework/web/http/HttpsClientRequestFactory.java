@@ -1,7 +1,6 @@
 package top.cheesetree.btx.framework.web.http;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.client.SimpleClientHttpRequestFactory;
 
 import javax.net.ssl.*;
@@ -11,8 +10,8 @@ import java.security.cert.X509Certificate;
 /**
  * @author van
  */
+@Slf4j
 public class HttpsClientRequestFactory extends SimpleClientHttpRequestFactory {
-    Logger logger = LoggerFactory.getLogger(getClass());
 
     @Override
     protected void prepareConnection(HttpURLConnection connection, String httpMethod) {
@@ -51,7 +50,7 @@ public class HttpsClientRequestFactory extends SimpleClientHttpRequestFactory {
 
             super.prepareConnection(httpsConnection, httpMethod);
         } catch (Exception e) {
-            logger.error("prepareConnection error", e);
+            log.error("prepareConnection error", e);
         }
     }
 }
