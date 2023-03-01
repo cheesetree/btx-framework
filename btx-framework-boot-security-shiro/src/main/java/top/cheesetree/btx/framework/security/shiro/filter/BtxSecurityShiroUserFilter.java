@@ -17,8 +17,6 @@ import java.io.OutputStream;
 
 /**
  * @author van
- * @date 2022/2/11 13:05
- * @description TODO
  */
 public class BtxSecurityShiroUserFilter extends UserFilter {
     @Override

@@ -27,9 +27,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * @Author: van
- * @Date: 2022/1/12 15:15
- * @Description: TODO
+ * @author: van
  */
 public class BtxSecurityAuthorizingRealm extends AuthorizingRealm {
     @Autowired

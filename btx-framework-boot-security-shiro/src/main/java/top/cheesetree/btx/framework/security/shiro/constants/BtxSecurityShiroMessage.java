@@ -3,9 +3,7 @@ package top.cheesetree.btx.framework.security.shiro.constants;
 import top.cheesetree.btx.framework.security.constants.BtxSecurityMessage;
 
 /**
- * @Author: van
- * @Date: 2022/1/13 10:28
- * @Description: TODO
+ * @author: van
  */
 public class BtxSecurityShiroMessage extends BtxSecurityMessage {
     public BtxSecurityShiroMessage(Integer code, String message) {

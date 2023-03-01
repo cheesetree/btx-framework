@@ -9,8 +9,6 @@ import java.util.List;
 
 /**
  * @author van
- * @date 2022/4/28 09:20
- * @description TODO
  */
 @ConfigurationProperties("btx.security.shiro.cors")
 @Getter

@@ -15,8 +15,6 @@ import java.util.Iterator;
 
 /**
  * @author van
- * @date 2022/11/17 14:21
- * @description TODO
  */
 @Slf4j
 public class BtxModularRealmAuthenticator extends ModularRealmAuthenticator {

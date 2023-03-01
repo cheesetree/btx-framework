@@ -8,8 +8,6 @@ import top.cheesetree.btx.framework.security.model.SecurityMenuDTO;
 
 /**
  * @author van
- * @date 2022/4/14 09:02
- * @description TODO
  */
 @Getter
 @Setter

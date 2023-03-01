@@ -41,9 +41,7 @@ import javax.servlet.Filter;
 import java.util.*;
 
 /**
- * @Author: van
- * @Date: 2022/1/12 13:25
- * @Description: TODO
+ * @author: van
  */
 @Configuration
 @EnableConfigurationProperties({BtxShiroProperties.class, BtxShiroCacheProperties.class, BtxShiroCasProperties.class,
@@ -64,10 +62,6 @@ public class BtxShiroConfiguration {
     @Lazy
     IBtxSecurityPermissionService<? extends SecurityMenuDTO, ? extends SecurityFuncDTO, ? extends SecurityRoleDTO> btxSecurityPermissionService;
 
-    /**
-     * 开启shiro aop注解支持.
-     * 使用代理方式;所以需要开启代码支持;
-     */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
         DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
@@ -178,9 +172,6 @@ public class BtxShiroConfiguration {
         return sessionManager;
     }
 
-    /**
-     * 注入 securityManager
-     */
     @Bean
     public SessionsSecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();

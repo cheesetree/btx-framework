@@ -6,8 +6,6 @@ import org.apache.shiro.authc.RememberMeAuthenticationToken;
 
 /**
  * @author van
- * @date 2022/2/21 09:19
- * @description TODO
  */
 @Getter
 @Setter

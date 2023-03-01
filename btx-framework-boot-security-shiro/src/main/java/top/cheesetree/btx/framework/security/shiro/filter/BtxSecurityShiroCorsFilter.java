@@ -17,8 +17,6 @@ import java.io.IOException;
 
 /**
  * @author van
- * @date 2022/4/28 08:54
- * @description TODO
  */
 public class BtxSecurityShiroCorsFilter extends OncePerRequestFilter {
     BtxShiroCorsProperties btxShiroCorsProperties;
