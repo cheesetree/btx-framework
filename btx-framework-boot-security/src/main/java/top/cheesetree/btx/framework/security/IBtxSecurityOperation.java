@@ -6,7 +6,9 @@ import top.cheesetree.btx.framework.security.model.SecurityAuthUserDTO;
 import top.cheesetree.btx.framework.security.model.SecurityUserDTO;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/13 09:21
+ * @Description: TODO
  */
 public interface IBtxSecurityOperation {
 

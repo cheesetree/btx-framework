@@ -17,6 +17,8 @@ import java.io.IOException;
 
 /**
  * @author van
+ * @date 2022/4/28 08:54
+ * @description TODO
  */
 public class BtxSecurityShiroCorsFilter extends OncePerRequestFilter {
     BtxShiroCorsProperties btxShiroCorsProperties;
@@ -44,8 +46,8 @@ public class BtxSecurityShiroCorsFilter extends OncePerRequestFilter {
                 btxShiroCorsProperties.getAllowCredentials());
         //允许请求方式
         response.setHeader(BtxSecurityShiroConst.ACCESS_CONTROL_ALLOW_METHODS,
-                btxShiroCorsProperties.getAllowHeaders().length > 0 ? String.join(",",
-                        btxShiroCorsProperties.getAllowHeaders()) : request.getMethod());
+                btxShiroCorsProperties.getMethods().length > 0 ? String.join(",",
+                        btxShiroCorsProperties.getMethods()) : request.getMethod());
 
         response.setHeader(BtxSecurityShiroConst.ACCESS_CONTROL_ALLOW_HEADERS,
                 btxShiroCorsProperties.getAllowHeaders().length > 0 ?

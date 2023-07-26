@@ -4,7 +4,9 @@ import top.cheesetree.btx.framework.core.model.ValueObject;
 import top.cheesetree.btx.framework.security.model.SecurityUserDTO;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2021/8/27 11:34
+ * @Description: TODO
  */
 public interface SecurityController {
     String getUserId();

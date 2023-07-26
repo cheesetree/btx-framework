@@ -7,7 +7,9 @@ import org.springframework.boot.autoconfigure.cache.CacheProperties;
 import java.time.Duration;
 
 /**
- * @author van
+ * @Author: van
+ * @Date: 2020/9/27 13:57
+ * @Description: TODO
  */
 @Getter
 @Setter

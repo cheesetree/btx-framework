@@ -26,7 +26,9 @@ import top.cheesetree.btx.framework.security.shiro.subject.StatelessToken;
 import top.cheesetree.btx.framework.security.shiro.support.cas.CasToken;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/13 09:29
+ * @Description: TODO
  */
 @Slf4j
 @Component
@@ -124,15 +126,29 @@ public class BtxSecurityShiroOperation implements IBtxSecurityOperation {
         Subject subject = SecurityUtils.getSubject();
 
         BtxShiroSecurityAuthUserDTO au = ((BtxShiroSecurityAuthUserDTO) SecurityUtils.getSubject().getPrincipal());
-
-        if (btxShiroCacheProperties.isEnabled()) {
-            RealmSecurityManager rsm = (RealmSecurityManager) SecurityUtils.getSecurityManager();
-            BtxSecurityAuthorizingRealm shiroRealm = (BtxSecurityAuthorizingRealm) rsm.getRealms().iterator().next();
-            shiroRealm.clearUserAuthorization(au);
+        RealmSecurityManager rsm = (RealmSecurityManager) SecurityUtils.getSecurityManager();
+        BtxSecurityAuthorizingRealm shiroRealm = (BtxSecurityAuthorizingRealm) rsm.getRealms().iterator().next();
+        AuthenticationToken tk = null;
+        switch (btxShiroProperties.getAuthType()) {
+            case CAS:
+                break;
+            case JWT:
+            case EXT_TOKEN:
+            case TOKEN:
+            case SESSION:
+            default:
+                tk = new StatelessToken(((AuthTokenInfo) au.getAuthinfo()).getAccessToken());
+                break;
         }
-
+        if (btxShiroCacheProperties.isEnabled()) {
+            shiroRealm.clearUserAuthorization(au, tk);
+        }
         au.setUser(user);
         subject.runAs(new SimplePrincipalCollection(au, "user"));
+
+        if (btxShiroCacheProperties.isEnabled()) {
+            shiroRealm.setUserAuthenticationCache(au, tk);
+        }
 
         return new CommJSON("");
     }

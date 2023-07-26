@@ -7,6 +7,7 @@ import org.springframework.data.redis.core.Cursor;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ScanOptions;
+import org.springframework.data.redis.core.script.DefaultRedisScript;
 
 import java.nio.charset.Charset;
 import java.util.*;
@@ -14,11 +15,26 @@ import java.util.concurrent.TimeUnit;
 
 /**
  * @author van
+ * @date 2022/2/15 17:22
+ * @description TODO
  */
 public class RedisShiroCache<K, V> implements Cache<K, V> {
     private RedisTemplate<String, V> redisTemplate;
     private String prefix;
     private int expire;
+
+    private static DefaultRedisScript<Object> getdelLua;
+
+    static {
+        getdelLua = new DefaultRedisScript<>();
+        getdelLua.setResultType(Object.class);
+        getdelLua.setScriptText("local current = redis.call('get', KEYS[1]);\n" +
+                "if (current) then\n" +
+                "    redis.call('del', KEYS[1]);\n" +
+                "end\n" +
+                "return current;");
+    }
+
 
     public RedisShiroCache(RedisTemplate<String, V> redisTemplate, String prefix, int expire) {
         this.redisTemplate = redisTemplate;
@@ -41,7 +57,11 @@ public class RedisShiroCache<K, V> implements Cache<K, V> {
 
     @Override
     public V remove(K k) throws CacheException {
-        return redisTemplate.opsForValue().getAndDelete(getRealKey(k.toString()));
+        String key = getRealKey(k.toString());
+        Object r = this.redisTemplate.execute(getdelLua, new ArrayList<String>() {{
+            add(key);
+        }});
+        return r == null ? null : (V) r;
     }
 
     @Override

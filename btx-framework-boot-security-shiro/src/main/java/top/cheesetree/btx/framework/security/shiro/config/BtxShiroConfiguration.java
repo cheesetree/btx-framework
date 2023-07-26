@@ -41,7 +41,9 @@ import javax.servlet.Filter;
 import java.util.*;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/12 13:25
+ * @Description: TODO
  */
 @Configuration
 @EnableConfigurationProperties({BtxShiroProperties.class, BtxShiroCacheProperties.class, BtxShiroCasProperties.class,
@@ -62,6 +64,10 @@ public class BtxShiroConfiguration {
     @Lazy
     IBtxSecurityPermissionService<? extends SecurityMenuDTO, ? extends SecurityFuncDTO, ? extends SecurityRoleDTO> btxSecurityPermissionService;
 
+    /**
+     * 开启shiro aop注解支持.
+     * 使用代理方式;所以需要开启代码支持;
+     */
     @Bean
     public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator() {
         DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
@@ -131,7 +137,7 @@ public class BtxShiroConfiguration {
                 break;
             case CAS:
                 filterMap.put("authc", new BtxSecurityShiroCasFilter(btxShiroCasProperties.getServerLoginUrl(),
-                        btxSecurityProperties.getErrorPath()));
+                        btxSecurityProperties.getErrorPath(), btxShiroCasProperties.getSkipTicketValidation()));
                 break;
             case SESSION:
                 filterMap.put("authc", new BtxSecurityShiroFormFilter());
@@ -172,6 +178,9 @@ public class BtxShiroConfiguration {
         return sessionManager;
     }
 
+    /**
+     * 注入 securityManager
+     */
     @Bean
     public SessionsSecurityManager securityManager() {
         DefaultWebSecurityManager securityManager = new DefaultWebSecurityManager();

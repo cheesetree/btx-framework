@@ -6,7 +6,9 @@ import org.springframework.boot.context.properties.ConfigurationProperties;
 import top.cheesetree.btx.framework.security.shiro.constants.BtxSecurityShiroEnum;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/13 09:03
+ * @Description: TODO
  */
 @ConfigurationProperties("btx.security.shiro.cache")
 @Getter

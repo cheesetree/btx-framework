@@ -4,6 +4,8 @@ import org.apache.shiro.authc.AuthenticationException;
 
 /**
  * @author van
+ * @date 2022/2/21 10:18
+ * @description TODO
  */
 public class CasAuthenticationException extends AuthenticationException {
     public CasAuthenticationException() {

@@ -7,7 +7,9 @@ import top.cheesetree.btx.framework.security.model.SecurityRoleDTO;
 import java.util.List;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2022/1/12 15:10
+ * @Description: TODO
  */
 public interface IBtxSecurityPermissionService<T extends SecurityMenuDTO, F extends SecurityFuncDTO,
         R extends SecurityRoleDTO> {

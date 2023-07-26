@@ -5,13 +5,15 @@ import lombok.Setter;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
 /**
- * @author: van
+ * @Author: van
+ * @Date: 2021/8/27 13:58
+ * @Description: TODO
  */
 @ConfigurationProperties(prefix = "btx.security")
 @Getter
 @Setter
 public class BtxSecurityProperties {
-    private String[] contextInterceptorExcludePathPatterns = new String[1];
+    private String[] contextInterceptorExcludePathPatterns = new String[0];
     private String errorPath = "";
     private String loginPath = "";
     private String noAuthPath = "";

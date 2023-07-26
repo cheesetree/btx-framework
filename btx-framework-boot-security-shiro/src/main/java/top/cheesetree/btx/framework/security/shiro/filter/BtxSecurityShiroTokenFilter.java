@@ -21,6 +21,8 @@ import java.io.OutputStream;
 
 /**
  * @author van
+ * @date 2022/2/17 15:09
+ * @description TODO
  */
 public class BtxSecurityShiroTokenFilter extends AuthenticatingFilter {
     private String tokenKey;
